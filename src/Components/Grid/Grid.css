@@ -1,0 +1,8 @@
+.grid {
+  width: 600px;
+  height: 600px;
+  display: grid;
+  grid-gap: 3px 3px;
+  margin: 0 auto;
+  margin-bottom: 70px;
+}

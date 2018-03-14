@@ -1,0 +1,37 @@
+body {
+  background-image: url('./sky.jpg');
+  font-family: 'Mina', sans-serif;
+  font-family: 'Rammetto One', cursive;
+}
+
+.title {
+  font-family: 'Rammetto One', cursive;
+  color: black;
+  font-size: 9em;
+  text-align: center;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: rgba(100%, 100%, 100%, 0.9);
+  margin-top: 70px;
+  margin-bottom: 10px;
+  animation-name: title;
+  animation-duration: 5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+@keyframes title {
+  0%   {-webkit-text-stroke-color: rgba(100%, 100%, 100%, 0.9);}
+  25%  {-webkit-text-stroke-color: #ddff00;}
+  50%  {-webkit-text-stroke-color: #00eddd;}
+  100% {-webkit-text-stroke-color: black;}
+}
+.subtitle {
+  font-family: 'Mina', sans-serif;
+  color: rgba(100%, 100%, 100%, 0.8);
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 80px;
+}
+.start-here {
+  font-family: 'Mina', sans-serif;
+  color: white;
+}
