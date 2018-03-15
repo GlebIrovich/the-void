@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Tile } from '../Tile/Tile';
 import { Overlay } from '../Overlay/Overlay';
 import './Grid.css';
+import mainTheme from './main.mp3';
+import winSound from './win.mp3';
 const _ = require('lodash');
 //
 // const path = ['c2r0', 'c2r1', 'c2r2','c2r3','c2r4'];
@@ -22,6 +24,9 @@ export class Grid extends Component {
       overlay: true,
       grid: []
     }
+    this.mainTheme = new Audio(mainTheme);
+    this.mainTheme.loop = true;
+    this.winSound = new Audio(winSound);
 
     this.gameStatus = this.gameStatus.bind(this);
     this.startGame = this.startGame.bind(this);
@@ -39,6 +44,7 @@ export class Grid extends Component {
 
       // check if chosen tile led to victory
       if( _.isEqual(_.sortBy(path),_.uniq(_.sortBy(playerPath)) ) ) {
+        this.winSound.play();
         this.setState({
           victory: true
         })
@@ -173,6 +179,9 @@ export class Grid extends Component {
   }
   componentWillMount(){
     this.generate()
+  }
+  componentDidMount(){
+    this.mainTheme.play();
   }
   render() {
     const gridDim = {
