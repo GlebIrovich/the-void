@@ -43,6 +43,11 @@ export class Overlay extends Component{
   handleDifficultyChange(event){
     this.props.setDifficulty(parseInt(event.target.getAttribute('data-grid'), 10))
   }
+  score(){
+    if(this.props.gameStatus.gameOver){
+      return `Number of Attempts: ${this.props.score}`
+    }
+  }
   message(){
     if (this.props.gameStatus.gameOver) {
       return 'Game Over!';
@@ -81,7 +86,7 @@ export class Overlay extends Component{
       <div
         style={style}
         className='overlay'>
-        <h1 className='message'>{this.message()}</h1>
+        <p className='message'>{this.message()} <br/> {this.score()}</p>
         <h1 className='start-button'
           onClick={this.handleClick}>{this.button()}</h1>
         {this.returnButton()}

@@ -1,3 +1,6 @@
+html {
+  font-size: 16px;
+}
 body {
   background-image: url('./sky.jpg');
   font-family: 'Mina', sans-serif;
@@ -6,13 +9,14 @@ body {
 
 .title {
   font-family: 'Rammetto One', cursive;
+  min-width: 300px;
   color: black;
-  font-size: 9em;
+  font-size: 8rem;
   text-align: center;
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: rgba(100%, 100%, 100%, 0.9);
-  margin-top: 70px;
-  margin-bottom: 10px;
+  margin-top: 5%;
+  margin-bottom: 3%;
   animation-name: title;
   animation-duration: 5s;
   animation-direction: alternate;
@@ -26,10 +30,11 @@ body {
 }
 .subtitle {
   font-family: 'Mina', sans-serif;
+  min-width: 300px;
   color: rgba(100%, 100%, 100%, 0.8);
   font-size: 2em;
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 6%;
 }
 .start-here {
   font-family: 'Mina', sans-serif;

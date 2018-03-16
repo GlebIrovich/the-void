@@ -22,7 +22,8 @@ export class Grid extends Component {
       playerPath: [],
       preview: false,
       overlay: true,
-      grid: []
+      grid: [],
+      score: 0
     }
     this.mainTheme = new Audio(mainTheme);
     this.mainTheme.loop = true;
@@ -34,6 +35,7 @@ export class Grid extends Component {
     this.definePath = this.definePath.bind(this);
     this.setDifficulty = this.setDifficulty.bind(this);
     this.backToMenu = this.backToMenu.bind(this);
+    this.setScore = this.setScore.bind(this);
   }
   gameStatus(key){
     let path = this.state.path;
@@ -45,9 +47,11 @@ export class Grid extends Component {
       // check if chosen tile led to victory
       if( _.isEqual(_.sortBy(path),_.uniq(_.sortBy(playerPath)) ) ) {
         this.winSound.play();
+        this.setScore(false);
         this.setState({
           victory: true
         })
+        return;
       }
       // add chosen tile to the players current path
       this.setState({
@@ -56,10 +60,19 @@ export class Grid extends Component {
       return;
     }
     // else GameOver
+    this.setScore(true);
     this.setState({
       gameOver: true
     })
     return;
+  }
+  setScore(lose){
+    let score = this.state.score;
+    score = lose ? score + 1 : 0;
+    console.log(score);
+    this.setState({
+      score: score
+    })
   }
   definePath(grid){
     let path = [];
@@ -117,7 +130,8 @@ export class Grid extends Component {
   backToMenu(){
     this.setState({
       gameOver: false,
-      overlay:true
+      overlay:true,
+      score: 0
     })
   }
   createArray(){
@@ -198,6 +212,7 @@ export class Grid extends Component {
               victory: this.state.victory,
             }
           }
+          score={this.state.score}
           backToMenu={this.backToMenu}
           overlay= {this.state.overlay}
           startGame={this.startGame}

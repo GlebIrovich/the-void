@@ -9,7 +9,7 @@
   text-align: center;
   margin-top: 30%;
   opacity: 0.6;
-  font-size: 2em;
+  font-size: 2rem;
 }
 
 .start-button {
@@ -18,7 +18,7 @@
   text-align: center;
   margin-top: 15%;
   opacity: 0.6;
-  font-size: 2em;
+  font-size: 2rem;
   margin-bottom: 20px;
 }
 .difficulty {
@@ -26,8 +26,8 @@
   color: white;
   text-align: center;
   opacity: 0.6;
-  font-size: 2em;
-  margin-top: 5px;
+  font-size: 1.7rem;
+  margin-top: 3%;
 }
 .difficulty:hover{
   opacity: 1;
