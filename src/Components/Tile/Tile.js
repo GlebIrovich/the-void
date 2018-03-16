@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ReactTouchEvents from "react-touch-events";
 import './Tile.css';
 import clickOkSound from './click.mp3';
 import clickFailSound from './fail.mp3';
@@ -41,9 +42,15 @@ export class Tile extends Component {
   render(){
     const name = this.changeColor();
     return (
-      <div
-        className={name}
-        onClick={this.handleClick}/>
+      <ReactTouchEvents
+            onTap={ this.handleClick }
+            >
+
+            <div
+              className={name}
+              onClick={this.handleClick}/>
+
+      </ReactTouchEvents>
     )
   }
 }
