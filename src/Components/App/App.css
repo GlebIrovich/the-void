@@ -8,6 +8,7 @@ body {
 }
 .app {
   overflow-x: hidden;
+  position: fixed;
 }
 .title {
   font-family: 'Rammetto One', cursive;
@@ -41,4 +42,13 @@ body {
 .start-here {
   font-family: 'Mina', sans-serif;
   color: white;
+}
+
+@media only screen and (max-width: 480px) and (orientation: portrait) {
+  /* .title{
+    font-size: 5rem;
+  } */
+  html{
+    font-size: 12px;
+  }
 }
