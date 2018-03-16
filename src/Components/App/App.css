@@ -6,7 +6,9 @@ body {
   font-family: 'Mina', sans-serif;
   font-family: 'Rammetto One', cursive;
 }
-
+.app {
+  overflow-x: hidden;
+}
 .title {
   font-family: 'Rammetto One', cursive;
   min-width: 300px;

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ReactTouchEvents from "react-touch-events";
 import './Overlay.css';
 
 const levels=[
@@ -30,8 +31,8 @@ export class Overlay extends Component{
   }
   returnButton(){
     if(this.props.gameStatus.gameOver){
-      return <h1 className='start-button'
-        onClick={this.handleBackToMenu}>Main menu</h1>
+      return <ReactTouchEvents onTap={this.handleBackToMenu}><h1 className='start-button'
+        onClick={this.handleBackToMenu}>Main menu</h1></ReactTouchEvents>
     }
   }
   handleBackToMenu(){
@@ -87,16 +88,19 @@ export class Overlay extends Component{
         style={style}
         className='overlay'>
         <p className='message'>{this.message()} <br/> {this.score()}</p>
-        <h1 className='start-button'
-          onClick={this.handleClick}>{this.button()}</h1>
+        <ReactTouchEvents onTap={this.handleClick}>
+          <h1 className='start-button'
+            onClick={this.handleClick}>{this.button()}
+          </h1>
+        </ReactTouchEvents>
         {this.returnButton()}
         {this.showLevels().map(
           level => {
-            return <h1 className='difficulty'
+            return <ReactTouchEvents onTap={this.handleDifficultyChange}><h1 className='difficulty'
               key={level.grid}
               data-grid={level.grid}
               onClick={this.handleDifficultyChange}
-              style={this.isChosen(level.grid)}>{level.level}</h1>
+              style={this.isChosen(level.grid)}>{level.level}</h1></ReactTouchEvents>
           }
         )}
       </div>
