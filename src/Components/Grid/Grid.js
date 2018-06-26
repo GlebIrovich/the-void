@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Tile } from '../Tile/Tile';
 import { Overlay } from '../Overlay/Overlay';
 import './Grid.css';
-import mainTheme from './main.mp3';
 import winSound from './win.mp3';
 const _ = require('lodash');
 //
@@ -25,8 +24,6 @@ export class Grid extends Component {
       grid: [],
       score: 0
     }
-    this.mainTheme = new Audio(mainTheme);
-    this.mainTheme.loop = true;
     this.winSound = new Audio(winSound);
 
     this.gameStatus = this.gameStatus.bind(this);
@@ -193,9 +190,6 @@ export class Grid extends Component {
   }
   componentWillMount(){
     this.generate()
-  }
-  componentDidMount(){
-    this.mainTheme.play();
   }
   render() {
     const gridDim = {
