@@ -79,8 +79,8 @@ export class Overlay extends Component{
   }
   render() {
     const style = {
-      gridColumn: `1 / span ${this.props.dims.columns}`,
-      gridRow: `1 / span ${this.props.dims.rows}`,
+      gridColumn: `1 / -1`,
+      gridRow: `1 / -1`,
       display: this.props.gameStatus.gameOver || this.props.gameStatus.victory || this.props.overlay ? 'block' : 'none'
     }
     return (
